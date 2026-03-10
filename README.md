@@ -1,15 +1,31 @@
-# DevOps Capstone Template
+Project:devops-capstone-project
+Author: Shelton Mutambirwa
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)
+Summary
+Here is a **clear and professional summary suitable for a project README**:
 
-This repository contains the starter code for the project in [**IBM-CD0285EN-SkillsNetwork DevOps Capstone Project**](https://www.coursera.org/learn/devops-capstone-project?specialization=devops-and-software-engineering) which is part of the [**IBM DevOps and Software Engineering Professional Certificate**](https://www.coursera.org/professional-certificates/devops-and-software-engineering)
+---
 
-## Usage
+## Project Overview
 
-You should use this template to start your DevOps Capstone project. It contains all of the code that you will need to get started.
+This project implements an **Account Microservice** for an e-commerce platform. The service is responsible for managing customer accounts and exposing a **RESTful API** that can be used by other microservices within the system.
 
-Do Not fork this code! It is meant to be used by pressing the  <span style=color:white;background:green>**Use this Template**</span> button in GitHub. This will copy the code to your own repository with no connection back to the original repository like a fork would. This is what you want.
+The microservice allows the platform to **create, retrieve, update, delete, and list customer accounts**, ensuring proper management of customer data.
+
+An initial implementation has already been started. The existing work includes:
+
+* A database model for storing customer account information.
+* A Python Flask-based REST API with an endpoint to **create a customer account**.
+
+The remaining development tasks involve implementing additional REST API endpoints to support:
+
+* Read customer account details
+* Update existing customer accounts
+* Delete customer accounts
+* List all customer accounts
+
+Development will be performed in an online lab environment, which requires setting up and preparing the environment before implementing and testing the remaining APIs.
+
 
 ## Development Environment
 
