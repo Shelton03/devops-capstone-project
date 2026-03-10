@@ -1,4 +1,7 @@
 Project:devops-capstone-project
+
+![Build Status](https://github.com/Shelton03/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+
 Author: Shelton Mutambirwa
 
 Summary
