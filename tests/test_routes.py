@@ -18,6 +18,7 @@ DATABASE_URI = os.getenv(
 )
 
 BASE_URL = "/accounts"
+HTTPS_ENVIRON = {"wsgi.url_scheme": "https"}
 
 
 ######################################################################
@@ -78,6 +79,21 @@ class TestAccountService(TestCase):
         """It should get 200_OK from the Home Page"""
         response = self.client.get("/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_index_security_headers(self):
+        """It should include security headers for HTTPS requests"""
+        response = self.client.get("/", environ_overrides=HTTPS_ENVIRON)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.headers.get("X-Frame-Options"), "SAMEORIGIN")
+        self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
+        self.assertEqual(
+            response.headers.get("Content-Security-Policy"),
+            "default-src 'self'; object-src 'none'",
+        )
+        self.assertEqual(
+            response.headers.get("Referrer-Policy"),
+            "strict-origin-when-cross-origin",
+        )
 
     def test_health(self):
         """It should be healthy"""
